@@ -14,12 +14,14 @@
         }
 
         .success-message {
-            font-size: 24px;
+            font-size: 32px;
             margin-bottom: 20px;
+            color: green;
         }
 
-        .btn-primary {
-            margin-top: 20px;
+        .user-info {
+            font-size: 20px;
+            color: #333;
         }
 
         .custom-button {
@@ -31,6 +33,8 @@
             transition: background-color 0.3s ease;
             text-decoration: none;
             font-size: 16px;
+            margin-top: 20px;
+            display: inline-block;
         }
 
         .custom-button:hover {
@@ -43,15 +47,29 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 success-container">
-                <h1 class="success-message" style="color: green; font-size: 32px;">Form Submitted Successfully!</h1>
-                
-                <!-- ✅ BACK TO LOGIN BUTTON -->
-                <a href="/" class="custom-button"> Back to Login</a>
+                <h1 class="success-message">Form Submitted Successfully!</h1>
+
+                <div class="user-info">
+                    <p><strong>Username:</strong> <span id="displayUsername"></span></p>
+                    <p><strong>Password:</strong> <span id="displayPassword"></span></p>
+                </div>
+
+                <a href="/" class="custom-button">Back to Login</a>
             </div>
         </div>
     </div>
 
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Function to get query parameters from URL
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Display values
+        document.getElementById("displayUsername").textContent = getQueryParam("username") || "(not provided)";
+        document.getElementById("displayPassword").textContent = getQueryParam("password") || "(not provided)";
+    </script>
 </body>
 
 </html>
