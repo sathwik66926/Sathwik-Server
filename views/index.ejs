@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Login Page</title>
+  <meta charset="UTF-8">
+  <title>Login - MLRITM</title>
+  <!-- ✅ Updated favicon -->
+  <link rel="icon" href="http://anvaya.mlritm.ac.in/Docs/MLRITM/App/logo.png?v=638899153496743360">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body {
-      background: url('https://wallpapercave.com/wp/wp2757874.gif') no-repeat center center fixed;
-      background-size: cover;
-      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url("https://xplusglobal.com/wp-content/uploads/2023/04/thumb-5.png") no-repeat center center fixed;
+      background-size: cover;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -18,69 +20,48 @@
     }
 
     .login-container {
-      background: rgba(255, 255, 255, 0.1);
+      background-color: rgba(255, 255, 255, 0.5);
       backdrop-filter: blur(10px);
-      border-radius: 10px;
-      padding: 30px 40px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
-      width: 350px;
+      -webkit-backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 5px;
+      width: 380px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     .header {
       display: flex;
       align-items: center;
+      justify-content: center;
+      gap: 12px;
       margin-bottom: 20px;
     }
 
     .header img {
-      height: 60px;
-      margin-right: 15px;
+      width: 50px;
+      height: 50px;
     }
 
     .header h2 {
+      margin: 0;
       font-size: 20px;
-      color: white;
-      font-weight: bold;
+      color: black;
     }
 
-    form input[type="text"],
-    form input[type="password"] {
+    input[type="text"], input[type="password"] {
       width: 100%;
       padding: 10px;
-      margin: 10px 0;
-      border-radius: 5px;
-      border: none;
-      font-size: 14px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
     }
 
-    form input[type="submit"] {
-      background-color: #007bff;
-      color: white;
-      border: none;
-      padding: 10px;
+    button {
       width: 100%;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    form input[type="submit"]:hover {
-      background-color: #0056b3;
-    }
-  </style>
-</head>
-<body>
-  <div class="login-container">
-    <div class="header">
-      <img src="http://anvaya.mlritm.ac.in/Docs/MLRITM/App/logo.png?v=638899153496743360" alt="MLRS Logo">
-      <h2>WELCOME - MLRITM</h2>
-    </div>
-    <form method="POST" action="/success">
-      <input type="text" name="username" placeholder="User Name" required>
-      <input type="password" name="password" placeholder="Password" required>
-      <input type="submit" value="Log In">
-    </form>
-  </div>
-</body>
-</html>
+      padding: 10px;
+      background-color: #0068e1;
+      border: none;
+      color: white;
