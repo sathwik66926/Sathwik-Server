@@ -24,7 +24,7 @@
       height: 100%;
     }
 
-    .login-container, .success-container {
+    .login-container {
       background-color: rgba(255, 255, 255, 0.5);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
@@ -34,11 +34,6 @@
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       text-align: center;
       border: 1px solid rgba(255, 255, 255, 0.2);
-      display: none;
-    }
-
-    .login-container.active, .success-container.active {
-      display: block;
     }
 
     .header {
@@ -84,22 +79,12 @@
     button:hover {
       background-color: #004ab0;
     }
-
-    .output-box {
-      font-size: 16px;
-      color: #333;
-      text-align: left;
-    }
-
-    .output-box p {
-      margin: 10px 0;
-    }
   </style>
 </head>
 <body>
   <div class="container">
     <!-- 🔹 Login Form Section -->
-    <div class="login-container active" id="loginSection">
+    <div class="login-container">
       <div class="header">
         <img src="https://www.eduska.com/assets/user_logo/8e02d072d4deaf04235e7da8ae8e0818.jpg" alt="MLRS Logo">
         <h2>WELCOME - MLRITM</h2>
@@ -111,42 +96,17 @@
         <button type="submit">Log In</button>
       </form>
     </div>
-
-    <!-- 🔹 Success Output Section -->
-    <div class="success-container" id="successSection">
-      <div class="header">
-        <img src="https://www.eduska.com/assets/user_logo/8e02d072d4deaf04235e7da8ae8e0818.jpg" alt="MLRS Logo">
-        <h2>LOGIN SUCCESSFUL</h2>
-      </div>
-
-      <div class="output-box">
-        <p><strong>Username:</strong> <span id="outputUsername"></span></p>
-        <p><strong>Password:</strong> <span id="outputPassword"></span></p>
-      </div>
-    </div>
   </div>
 
-  <!-- 🔹 JavaScript to switch views and display data -->
+  <!-- 🔹 You can handle form submission here if needed -->
   <script>
     const form = document.getElementById('loginForm');
-    const loginSection = document.getElementById('loginSection');
-    const successSection = document.getElementById('successSection');
-    const outputUsername = document.getElementById('outputUsername');
-    const outputPassword = document.getElementById('outputPassword');
 
     form.addEventListener('submit', function(e) {
       e.preventDefault();
 
-      const username = form.username.value;
-      const password = form.password.value;
-
-      // Show values
-      outputUsername.textContent = username;
-      outputPassword.textContent = password;
-
-      // Switch views
-      loginSection.classList.remove('active');
-      successSection.classList.add('active');
+      // You can handle login validation here or redirect to success.html
+      alert("Login submitted!");
     });
   </script>
 </body>
