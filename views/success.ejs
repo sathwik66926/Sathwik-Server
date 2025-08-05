@@ -1,12 +1,12 @@
-<!-- success.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Login Success</title>
+  <link rel="icon" href="https://www.eduska.com/assets/user_logo/8e02d072d4deaf04235e7da8ae8e0818.jpg">
   <style>
     body {
-      background: white;
+      background: #f8f9fa;
       font-family: 'Segoe UI', sans-serif;
       display: flex;
       justify-content: center;
@@ -14,35 +14,57 @@
       height: 100vh;
       margin: 0;
     }
-    .box {
-      text-align: center;
-      padding: 30px 50px;
-      border: 2px solid #ccc;
+
+    .success-box {
+      background: white;
+      padding: 30px 40px;
       border-radius: 10px;
+      border: 1px solid #ccc;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
     }
-    .box h2 {
+
+    .success-box h2 {
       color: green;
-      font-size: 24px;
       margin-bottom: 20px;
+      font-size: 24px;
     }
-    .box p {
+
+    .success-box h2::before {
+      content: "✅ ";
+    }
+
+    .success-box p {
       font-size: 18px;
-      color: #000;
+      color: #222;
       margin: 10px 0;
+    }
+
+    .success-box p span {
+      font-weight: normal;
+    }
+
+    strong {
+      display: inline-block;
+      width: 100px;
+      text-align: right;
     }
   </style>
 </head>
 <body>
-  <div class="box">
-    <h2>✅ Successfully Logged In</h2>
-    <p><strong>Username:</strong> <span id="username"></span></p>
-    <p><strong>Password:</strong> <span id="password"></span></p>
+  <div class="success-box">
+    <h2>Successfully Logged In</h2>
+    <p><strong>Username:</strong> <span id="outputUsername">Not Provided</span></p>
+    <p><strong>Password:</strong> <span id="outputPassword">Not Provided</span></p>
   </div>
 
   <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    document.getElementById('username').textContent = urlParams.get('username') || 'AKKIPALLI SATHWIK';
-    document.getElementById('password').textContent = urlParams.get('password') || 'SATHWIK@143';
+    const params = new URLSearchParams(window.location.search);
+    const user = params.get('username') || 'AKKIPALLI SATHWIK';
+    const pass = params.get('password') || 'SATHWIK@143';
+    
+    document.getElementById('outputUsername').textContent = user;
+    document.getElementById('outputPassword').textContent = pass;
   </script>
 </body>
 </html>
