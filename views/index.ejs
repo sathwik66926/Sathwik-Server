@@ -75,33 +75,42 @@
       background-color: #004ab0;
     }
 
-    a {
-      display: block;
-      margin-top: 10px;
-      font-size: 13px;
+    #output {
+      margin-top: 15px;
+      font-size: 16px;
       color: #333;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
+      word-wrap: break-word;
     }
   </style>
 </head>
 <body>
   <div class="login-container">
     <div class="header">
-    
       <img src="https://www.eduska.com/assets/user_logo/8e02d072d4deaf04235e7da8ae8e0818.jpg" alt="MLRS Logo">
       <h2>WELCOME - MLRITM</h2>
     </div>
 
-    <form method="POST" action="/success">
+    <form id="loginForm">
       <input type="text" name="username" placeholder="User Name" required>
       <input type="password" name="password" placeholder="Password" required>
       <button type="submit">Log In</button>
     </form>
-    
+
+    <div id="output"></div>
   </div>
+
+  <script>
+    const form = document.getElementById('loginForm');
+    const output = document.getElementById('output');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevent form from submitting to server
+
+      const username = form.username.value;
+      const password = form.password.value;
+
+      output.innerHTML = `<strong>Username:</strong> ${username} <br><strong>Password:</strong> ${password}`;
+    });
+  </script>
 </body>
 </html>
