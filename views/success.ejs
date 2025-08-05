@@ -20,7 +20,7 @@
       border: 1px solid #ddd;
       padding: 40px;
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 10);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
     h1 {
@@ -42,15 +42,19 @@
 <body>
   <div class="success-box">
     <h1>✅ Successfully Logged In</h1>
-    <p><span class="label">Username:</span> <span id="username"></span></p>
-    <p><span class="label">Password:</span> <span id="password"></span></p>
+    <p><span class="label">Username:</span> <span id="username">Loading...</span></p>
+    <p><span class="label">Password:</span> <span id="password">Loading...</span></p>
   </div>
 
   <script>
-    const params = new URLSearchParams(window.location.search);
-    document.getElementById("username").textContent = params.get("username") || "Not Provided";
-    document.getElementById("password").textContent = params.get("password") || "Not Provided";
+    // Get query parameters from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const username = urlParams.get('username');
+    const password = urlParams.get('password');
+
+    // Set them on the page
+    document.getElementById("username").textContent = username || "AKKIPALLI SATHWIK";
+    document.getElementById("password").textContent = password || "SATHWIK@143";
   </script>
 </body>
 </html>
-
