@@ -2,52 +2,89 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Login Success</title>
+  <title>Login Success - MLRITM</title>
+  <link rel="icon" href="https://www.eduska.com/assets/user_logo/8e02d072d4deaf04235e7da8ae8e0818.jpg">
   <style>
     body {
+      margin: 0;
+      padding: 0;
       font-family: 'Segoe UI', sans-serif;
+      background: url("https://xplusglobal.com/wp-content/uploads/2023/04/thumb-5.png") no-repeat center center fixed;
+      background-size: cover;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background: #f5f5f5;
+    }
+
+    .success-container {
+      background-color: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 5px;
+      width: 400px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .header img {
+      width: 50px;
+      height: 50px;
+    }
+
+    .header h2 {
+      margin: 0;
+      font-size: 20px;
+      color: black;
     }
 
     .output-box {
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-      text-align: center;
-    }
-
-    h1 {
-      margin-bottom: 10px;
+      font-size: 16px;
       color: #333;
+      text-align: left;
     }
 
-    p {
-      font-size: 18px;
-      color: #555;
+    .output-box p {
+      margin: 10px 0;
     }
   </style>
 </head>
 <body>
-  <div class="output-box">
-    <h1>Login Successful</h1>
-    <p id="userOutput"></p>
-    <p id="passOutput"></p>
+  <div class="success-container">
+    <div class="header">
+      <img src="https://www.eduska.com/assets/user_logo/8e02d072d4deaf04235e7da8ae8e0818.jpg" alt="MLRS Logo">
+      <h2>LOGIN SUCCESSFUL</h2>
+    </div>
+
+    <div class="output-box">
+      <p><strong>Username:</strong> <span id="username"></span></p>
+      <p><strong>Password:</strong> <span id="password"></span></p>
+    </div>
   </div>
 
   <script>
-    // Read URL parameters
-    const params = new URLSearchParams(window.location.search);
-    const username = params.get('username');
-    const password = params.get('password');
+    // Function to read query parameters from the URL
+    function getQueryParams() {
+      const params = new URLSearchParams(window.location.search);
+      return {
+        username: params.get("username") || "Not Provided",
+        password: params.get("password") || "Not Provided"
+      };
+    }
 
-    // Display the values
-    document.getElementById('userOutput').textContent = `Username: ${username}`;
-    document.getElementById('passOutput').textContent = `Password: ${password}`;
+    // Fill in the values from the URL
+    const { username, password } = getQueryParams();
+    document.getElementById("username").textContent = username;
+    document.getElementById("password").textContent = password;
   </script>
 </body>
 </html>
