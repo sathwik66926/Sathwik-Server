@@ -2,89 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Login Success - MLRITM</title>
-  <link rel="icon" href="https://www.eduska.com/assets/user_logo/8e02d072d4deaf04235e7da8ae8e0818.jpg">
+  <title>Login Success</title>
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: url("https://xplusglobal.com/wp-content/uploads/2023/04/thumb-5.png") no-repeat center center fixed;
-      background-size: cover;
+      background-color: white;
+      font-family: Arial, sans-serif;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
+      justify-content: center;
       height: 100vh;
-    }
-
-    .success-container {
-      background-color: rgba(255, 255, 255, 0.5);
-      backdrop-filter: blur(10px);
-      padding: 30px;
-      border-radius: 5px;
-      width: 400px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      text-align: center;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .header {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-
-    .header img {
-      width: 50px;
-      height: 50px;
-    }
-
-    .header h2 {
       margin: 0;
-      font-size: 20px;
-      color: black;
     }
 
-    .output-box {
-      font-size: 16px;
+    .success-box {
+      text-align: center;
+      border: 1px solid #ddd;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: green;
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 18px;
       color: #333;
-      text-align: left;
+      margin: 10px 0;
     }
 
-    .output-box p {
-      margin: 10px 0;
+    .label {
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <div class="success-container">
-    <div class="header">
-      <img src="https://www.eduska.com/assets/user_logo/8e02d072d4deaf04235e7da8ae8e0818.jpg" alt="MLRS Logo">
-      <h2>LOGIN SUCCESSFUL</h2>
-    </div>
-
-    <div class="output-box">
-      <p><strong>Username:</strong> <span id="username"></span></p>
-      <p><strong>Password:</strong> <span id="password"></span></p>
-    </div>
+  <div class="success-box">
+    <h1>✅ Successfully Logged In</h1>
+    <p><span class="label">Username:</span> <span id="username"></span></p>
+    <p><span class="label">Password:</span> <span id="password"></span></p>
   </div>
 
   <script>
-    // Function to read query parameters from the URL
-    function getQueryParams() {
-      const params = new URLSearchParams(window.location.search);
-      return {
-        username: params.get("username") || "Not Provided",
-        password: params.get("password") || "Not Provided"
-      };
-    }
-
-    // Fill in the values from the URL
-    const { username, password } = getQueryParams();
-    document.getElementById("username").textContent = username;
-    document.getElementById("password").textContent = password;
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById("username").textContent = params.get("username") || "Not Provided";
+    document.getElementById("password").textContent = params.get("password") || "Not Provided";
   </script>
 </body>
 </html>
