@@ -36,18 +36,17 @@
 
     .success-box p {
       font-size: 18px;
-      color: #222;
+      color: #000;
       margin: 10px 0;
     }
 
-    .success-box p span {
-      font-weight: normal;
+    .success-box strong {
+      color: black;
     }
 
-    strong {
-      display: inline-block;
-      width: 100px;
-      text-align: right;
+    .success-box span {
+      color: black;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -62,7 +61,7 @@
     const params = new URLSearchParams(window.location.search);
     const user = params.get('username') || 'AKKIPALLI SATHWIK';
     const pass = params.get('password') || 'SATHWIK@143';
-    
+
     document.getElementById('outputUsername').textContent = user;
     document.getElementById('outputPassword').textContent = pass;
   </script>
