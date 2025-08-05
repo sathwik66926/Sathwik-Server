@@ -1,75 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Success Page</title>
+  <meta charset="UTF-8">
+  <title>Login Success</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f5f5f5;
+    }
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        .success-container {
-            text-align: center;
-            margin-top: 50px;
-        }
+    .output-box {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      text-align: center;
+    }
 
-        .success-message {
-            font-size: 32px;
-            margin-bottom: 20px;
-            color: green;
-        }
+    h1 {
+      margin-bottom: 10px;
+      color: #333;
+    }
 
-        .user-info {
-            font-size: 20px;
-            color: #333;
-        }
-
-        .custom-button {
-            background-color: rgb(140, 84, 183);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            text-decoration: none;
-            font-size: 16px;
-            margin-top: 20px;
-            display: inline-block;
-        }
-
-        .custom-button:hover {
-            background-color: rgb(143, 67, 220);
-        }
-    </style>
+    p {
+      font-size: 18px;
+      color: #555;
+    }
+  </style>
 </head>
-
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 success-container">
-                <h1 class="success-message">Form Submitted Successfully!</h1>
+  <div class="output-box">
+    <h1>Login Successful</h1>
+    <p id="userOutput"></p>
+    <p id="passOutput"></p>
+  </div>
 
-                <div class="user-info">
-                    <p><strong>Username:</strong> <span id="displayUsername"></span></p>
-                    <p><strong>Password:</strong> <span id="displayPassword"></span></p>
-                </div>
+  <script>
+    // Read URL parameters
+    const params = new URLSearchParams(window.location.search);
+    const username = params.get('username');
+    const password = params.get('password');
 
-                <a href="/" class="custom-button">Back to Login</a>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Function to get query parameters from URL
-        function getQueryParam(param) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(param);
-        }
-
-        // Display values
-        document.getElementById("displayUsername").textContent = getQueryParam("username") || "(not provided)";
-        document.getElementById("displayPassword").textContent = getQueryParam("password") || "(not provided)";
-    </script>
+    // Display the values
+    document.getElementById('userOutput').textContent = `Username: ${username}`;
+    document.getElementById('passOutput').textContent = `Password: ${password}`;
+  </script>
 </body>
-
 </html>
