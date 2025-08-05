@@ -9,30 +9,31 @@
       background: white;
       font-family: 'Segoe UI', sans-serif;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       height: 100vh;
       margin: 0;
     }
-    .success-box {
-      border: 1px solid #ccc;
-      padding: 30px 40px;
-      border-radius: 10px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    .box {
       text-align: center;
+      padding: 30px 50px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
     }
-    .success-box h2 {
+    .box h2 {
       color: green;
+      font-size: 24px;
       margin-bottom: 20px;
     }
-    .success-box p {
+    .box p {
       font-size: 18px;
+      color: #000;
       margin: 10px 0;
     }
   </style>
 </head>
 <body>
-  <div class="success-box">
+  <div class="box">
     <h2>✅ Successfully Logged In</h2>
     <p><strong>Username:</strong> <span id="username"></span></p>
     <p><strong>Password:</strong> <span id="password"></span></p>
@@ -40,8 +41,8 @@
 
   <script>
     const urlParams = new URLSearchParams(window.location.search);
-    document.getElementById("username").textContent = urlParams.get('username') || 'AKKIPALLI SATHWIK';
-    document.getElementById("password").textContent = urlParams.get('password') || 'SATHWIK@143';
+    document.getElementById('username').textContent = urlParams.get('username') || 'AKKIPALLI SATHWIK';
+    document.getElementById('password').textContent = urlParams.get('password') || 'SATHWIK@143';
   </script>
 </body>
 </html>
